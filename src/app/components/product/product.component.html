@@ -1,0 +1,31 @@
+<ng-container *ngIf="product">
+  <div class="flex flex-col border border-black p-6 m-2 space-y-3 items-center">
+    <h2 class="capitalize border border-black py-2 px-4 font-bold">
+      {{ product.title }}
+    </h2>
+    <div class="flex flex-col gap-5 justify-between items-center">
+      <div class="shadow-md shadow-black">
+        <img
+          [ngSrc]="product.image"
+          alt="product image"
+          width="192"
+          height="208"
+          class="object-contain rounded-lg"
+        />
+      </div>
+      <div
+        class="flex flex-col w-2/3 gap-2 border border-black rounded-lg py-6 px-2 items-center"
+      >
+        <p class="text-2xl font-extrabold">$ {{ product.price }}</p>
+        <p class="text-xl leading-tight">{{ product.description }}</p>
+        <p class="capitalize font-semibold text-lg">
+          Category: {{ product.category }}
+        </p>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!product">
+  <h1 class="text-2xl font-bold mt-4">Producto no encontrado.</h1>
+</ng-container>

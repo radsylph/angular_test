@@ -1,0 +1,10 @@
+<h1>{{ title }}</h1>
+<p>Este es el input para poner tu nombre</p>
+<p>Valor del input: {{ inputvalue }}</p>
+<input
+  type="{{ type }}"
+  #testinput
+  (input)="changeInputValue($event)"
+  [(ngModel)]="newInputValue"
+  placeholder="{{ placeholder }}"
+/>
